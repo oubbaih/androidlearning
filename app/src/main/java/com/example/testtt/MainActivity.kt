@@ -25,7 +25,14 @@ class MainActivity : AppCompatActivity() {
                 in 12 downTo 1 -> tt.text = "down $inputvalue"
                 else -> tt.text = "unvalide Number"
             }
-
+            for(num in 10 downTo  1){
+                print("\n $num")
+            }
+            fun Some(a:Int , b:Int):Int{
+                return a+b
+            }
+            var res = Some(1,2)
+            print("result is : $res")
         }
 
 
