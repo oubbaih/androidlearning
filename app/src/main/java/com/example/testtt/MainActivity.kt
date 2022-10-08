@@ -33,8 +33,10 @@ class MainActivity : AppCompatActivity() {
             }
             var res = Some(1,2)
             println("result is : $res")
-            var test =  Person(199)
-            test.testFun()
+            var test =  Person("lahcen" , "oubbaih")
+            test.tes = 1122
+            println("${test.tes}")
+
         }
 
 
@@ -43,13 +45,22 @@ class MainActivity : AppCompatActivity() {
 
 }
 
-class Person() {
-    var age:Int? = null
+ open class Person(firstName:String, lastName:String) {
+    var firstName:String?=null
+    var lastName:String?=null
+    var tes:Int = 12
+        get() = field
+        set(value) {
+            field = if (value > 0)  value else throw IllegalArgumentException("VALUE CAN'T BE NEGAVITVE")
+        }
 
-    constructor(age:Int) : this() {
-       this.age=age
+    init{
+        this.firstName= firstName
+        this.lastName=lastName
+        println("Hi? $firstName + ' ' + $lastName ")
     }
-    fun testFun(){
-        println("my Age Is  : $age")
-    }
+
+}
+class Tess(firstName: String, lastName: String) : Person(firstName, lastName) {
+
 }
