@@ -25,17 +25,31 @@ class MainActivity : AppCompatActivity() {
                 in 12 downTo 1 -> tt.text = "down $inputvalue"
                 else -> tt.text = "unvalide Number"
             }
-            for(num in 10 downTo  1){
+            for(num in 10 downTo  1 step 2){
                 print("\n $num")
             }
             fun Some(a:Int , b:Int):Int{
                 return a+b
             }
             var res = Some(1,2)
-            print("result is : $res")
+            println("result is : $res")
+            var test =  Person(199)
+            test.testFun()
         }
 
 
     }
+
+
 }
 
+class Person() {
+    var age:Int? = null
+
+    constructor(age:Int) : this() {
+       this.age=age
+    }
+    fun testFun(){
+        println("my Age Is  : $age")
+    }
+}
