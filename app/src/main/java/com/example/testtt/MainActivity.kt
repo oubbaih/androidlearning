@@ -12,31 +12,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val inp = findViewById<EditText>(R.id.editTextTextPersonName3)
-        val tt = findViewById<TextView>(R.id.textView2)
-        val btnn = findViewById<Button>(R.id.button)
 
-        btnn.setOnClickListener {
-            var inputvalue = inp.text.toString().toInt()
+        val btn = findViewById<Button>(R.id.button)
 
-            when(inputvalue){
-                in 2..5 -> tt.text = "hello $inputvalue"
-                in 6..12 -> tt.text = "hi $inputvalue"
-                in 12 downTo 1 -> tt.text = "down $inputvalue"
-                else -> tt.text = "unvalide Number"
-            }
-            for(num in 10 downTo  1 step 2){
-                print("\n $num")
-            }
-            fun Some(a:Int , b:Int):Int{
-                return a+b
-            }
-            var res = Some(1,2)
-            println("result is : $res")
-            var test =  Person("lahcen" , "oubbaih")
-            test.tes = 1122
-            println("${test.tes}")
-
+        btn.setOnClickListener{
+            println("btn clicked")
         }
 
 
@@ -45,22 +25,3 @@ class MainActivity : AppCompatActivity() {
 
 }
 
- open class Person(firstName:String, lastName:String) {
-    var firstName:String?=null
-    var lastName:String?=null
-    var tes:Int = 12
-        get() = field
-        set(value) {
-            field = if (value > 0)  value else throw IllegalArgumentException("VALUE CAN'T BE NEGAVITVE")
-        }
-
-    init{
-        this.firstName= firstName
-        this.lastName=lastName
-        println("Hi? $firstName + ' ' + $lastName ")
-    }
-
-}
-class Tess(firstName: String, lastName: String) : Person(firstName, lastName) {
-
-}
